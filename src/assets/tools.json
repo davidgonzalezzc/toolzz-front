@@ -1,0 +1,51 @@
+[
+    {
+      "name": "Martillo",
+      "description": "Herramienta utilizada para golpear y clavar objetos.",
+      "brand": "Stanley",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_876133-MCO45107052063_032021-O.jpg",
+      "price": 15.99,
+      "amount": 10
+    },
+    {
+      "name": "Destornillador",
+      "description": "Herramienta utilizada para apretar o aflojar tornillos.",
+      "brand": "Bosch",
+      "image": "https://example.com/destornillador.jpg",
+      "price": 9.99,
+      "amount": 25
+    },
+    {
+      "name": "Sierra eléctrica",
+      "description": "Herramienta utilizada para cortar madera o metal de forma rápida y precisa.",
+      "brand": "DeWalt",
+      "image": "https://example.com/sierra.jpg",
+      "price": 99.99,
+      "amount": 5
+    },
+    {
+      "name": "Llave ajustable",
+      "description": "Herramienta utilizada para apretar o aflojar tuercas y tornillos de diferentes tamaños.",
+      "brand": "Bahco",
+      "image": "https://example.com/llave_ajustable.jpg",
+      "price": 24.99,
+      "amount": 15
+    },
+    {
+      "name": "Taladro inalámbrico",
+      "description": "Herramienta eléctrica utilizada para perforar agujeros en diferentes materiales, como madera, metal o concreto.",
+      "brand": "Makita",
+      "image": "https://example.com/taladro_inalambrico.jpg",
+      "price": 89.99,
+      "amount": 8
+    },
+    {
+      "name": "Cinta métrica",
+      "description": "Herramienta utilizada para medir longitudes y distancias con precisión.",
+      "brand": "Stanley",
+      "image": "https://example.com/cinta_metrica.jpg",
+      "price": 7.99,
+      "amount": 20
+    }
+
+  ]

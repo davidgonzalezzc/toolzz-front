@@ -1,0 +1,10 @@
+<div class="login">
+  <form class="custom-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <h1>Bienvenido a Tornillos Perchos</h1>
+      <label>Usuario:</label>
+      <input type="text" formControlName="login" name="login" placeholder="Login" required="required"/>
+      <label>Password:</label>
+      <input type="password" formControlName="password" name="password" placeholder="Password" required="required"/>
+      <button type="submit">Ingresar</button>
+  </form>
+</div>

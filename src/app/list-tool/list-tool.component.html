@@ -1,0 +1,18 @@
+<div class="row">
+  <div *ngFor="let tool of tools" class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-image-top" src="{{tool.image}}" class="card-img-top">
+        <h5 class="card-title">{{tool.name}}</h5>
+        <p class="card-text">{{tool.description}}</p>
+        <a class="card-text" (click)="getBrand(tool.brand)">{{tool.brand}}</a>
+        <p class="card-text">{{tool.amount}}</p>
+        <p class="card-text">{{tool.price | currency}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

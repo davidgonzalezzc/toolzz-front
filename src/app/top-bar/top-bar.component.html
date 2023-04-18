@@ -1,0 +1,38 @@
+<header>
+  <div class="navbar navbar-expand navbar-dark px-4 flex-column flex-md-row">
+
+    <div class="md-2">
+      <img class="brand" src="/assets/logo.png" />
+    </div>
+
+    <div class="md-4 ">
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-link" href="#">Pricing</li>
+      </ul>
+    </div>
+
+    <div ngbDropdown class="md-2">
+      <button type="button" class="btn" id="dropdownConfig" ngbDropdownToggle>Toggle</button>
+        <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+          <button ngbDropdownItem>nombre-usuario</button>
+          <button ngbDropdownItem>Usuarios</button>
+          <button ngbDropdownItem>Herramientas</button>
+          <button ngbDropdownItem>Cerrar sesión</button>
+        </div>
+    </div>
+
+    <div class=" md-4">
+      <form class="">
+        <input type="search" class="form-control rounded" placeholder="Search"/>
+        <button type="submit">Search</button>
+      </form>
+    </div>
+
+  </div>
+</header>

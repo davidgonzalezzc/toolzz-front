@@ -9,6 +9,7 @@ import { Tool } from './model/Tool';
 export class ListToolsService {
 
   private url = './assets/tools.json';
+  private url2 = 'localhost:8090/tools'
 
   constructor(
     private httpClient: HttpClient

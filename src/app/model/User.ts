@@ -1,4 +1,9 @@
 export interface User{
-  username: string;
-  token:string;
+  id : BigInteger;
+  email : String;
+  name: String;
+  last: String;
+  password: String;
+  role: String;
+  birthday:String;
 }

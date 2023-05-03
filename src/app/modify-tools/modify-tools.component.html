@@ -1,0 +1,25 @@
+<h2 id="titulo">Herramientas</h2>
+<button class="btn btn-warning">Nuevo</button>
+
+<table class="table table-light">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nombre</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Cantidad</th>
+      <th scope="col">Ciudad</th>
+      <th scope="col">Opciones</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let tool of tools">
+      <td>{{tool.id}}</td>
+      <td>{{tool.name}}</td>
+      <td>{{tool.price |currency}}</td>
+      <td>{{tool.amount}}</td>
+      <td>{{tool.city}}</td>
+      <td><button class="btn bnt-warning">Modificar</button><button class="btn btn-danger">Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>

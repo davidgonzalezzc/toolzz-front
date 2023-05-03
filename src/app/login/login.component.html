@@ -1,34 +1,10 @@
-<div class="container">
-  <div class="mb-3">
-    <label for="login_email" class="form-label">Correo Electronico</label>
-    <input type="email" class="form-control" id="login_email" aria-describedby="emailHelp" [(ngModel)]="email">
-  </div>
-  <div class="mb-3">
-    <label for="login_password" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="login_password" [(ngModel)]="password">
-  </div>
-  <button class="btn btn-primary" (click)="signIn()">Iniciar Sesión</button>
-<div
-class="modal"
-tabindex="-1"
-role="dialog"
-[ngStyle]="{'display':displayStyle}">
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h4 class="modal-title">Bienvenido a la Libreria Nacional!!!</h4>
-    </div>
-    <div class="modal-body">
-      <p>Recuerde cerrar su sesión, disfrute su paso por la Libreria Nacional</p>
-
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-danger"
-              (click)="closePopup()">
-        Close
-      </button>
-    </div>
-  </div>
-</div>
-</div>
+<div class="login">
+  <form class="custom-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <h1>Bienvenido a Tornillos Perchos</h1>
+      <label>Usuario:</label>
+      <input type="text" formControlName="login" name="login" placeholder="Login" required="required"/>
+      <label>Password:</label>
+      <input type="password" formControlName="password" name="password" placeholder="Password" required="required"/>
+      <button type="submit">Ingresar</button>
+  </form>
 </div>

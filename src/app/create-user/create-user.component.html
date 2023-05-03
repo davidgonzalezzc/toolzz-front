@@ -1,0 +1,17 @@
+<h2 class="title">Crear Usuario</h2>
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+  <label>Nombre:</label>
+  <input name="name" ngModel required #first="ngModel">
+  <label>Apellido:</label>
+  <input name="last" ngModel>
+  <label>Email:</label>
+  <input name="email" ngModel>
+  <label>Password:</label>
+  <input name="password" ngModel>
+  <label>Role</label>
+  <input name="role" ngModel>
+  <label>Birthday</label>
+  <input name="birthday" ngModel>
+
+  <button class="btn btn-success">Submit</button>
+</form>

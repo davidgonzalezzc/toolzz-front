@@ -1,5 +1,7 @@
+import { ListToolsService } from './../list-tools.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbDropdownConfig, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginService } from '../login.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -7,8 +9,10 @@ import { NgbDropdownConfig, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
+userLoggedIn = false;
 
-  constructor() { }
+  constructor(private loginService: LoginService,
+    private listToolsService:ListToolsService) { }
 
   ngOnInit(): void {
   }

@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 export class ListToolComponent implements OnInit {
   selectedBrand: string = '';
   tools: Tool[] = [];
+  searchName = '';
+
 
   constructor(
     private toolService:ListToolsService
@@ -20,6 +22,7 @@ export class ListToolComponent implements OnInit {
   ngOnInit(): void {
     this.getTools();
   }
+
 
   getTools(): void {
     this.toolService.getTools().subscribe(

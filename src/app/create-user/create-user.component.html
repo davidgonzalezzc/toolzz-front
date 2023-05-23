@@ -1,17 +1,38 @@
-<h2 class="title">Crear Usuario</h2>
-<form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-  <label>Nombre:</label>
-  <input name="name" ngModel required #first="ngModel">
-  <label>Apellido:</label>
-  <input name="last" ngModel>
-  <label>Email:</label>
-  <input name="email" ngModel>
-  <label>Password:</label>
-  <input name="password" ngModel>
-  <label>Role</label>
-  <input name="role" ngModel>
-  <label>Birthday</label>
-  <input name="birthday" ngModel>
-
-  <button class="btn btn-success">Submit</button>
-</form>
+<div class="container ">
+  <h2 class="title">Crear Usuario</h2>
+  <form [formGroup]="user" (ngSubmit)="onSubmit()">
+    <div class="container">
+    <label for="name">First Name: </label>
+    <input id="name" type="text" formControlName="name">
+    </div>
+    <br>
+    <div class="container">
+    <label for="last">Last Name: </label>
+    <input id="last" type="text" formControlName="last">
+    </div>
+    <br>
+    <div class="container">
+    <label for="email">Email: </label>
+    <input id="email" type="text" formControlName="email">
+    </div>
+    <br>
+    <div class="container">
+    <label for="password">Password: </label>
+    <input id="password" type="text" formControlName="password">
+    </div>
+    <br>
+    <div class="container">
+    <label for="birthday">Birthday </label>
+    <input id="birthday" type="text" formControlName="birthday">
+    </div>
+    <br>
+    <div class="container">
+    <label for="role">Role: </label>
+    <input id="role" type="text" formControlName="role">
+    <br>
+    <div class="container"></div>
+    <p>Complete the form to enable button.</p>
+    <button type="submit" [disabled]="!user.valid">Submit</button>
+    </div>
+  </form>
+</div>

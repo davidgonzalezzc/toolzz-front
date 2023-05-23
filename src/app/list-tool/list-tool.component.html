@@ -1,18 +1,38 @@
-<div class="row">
-  <div *ngFor="let tool of tools" class="col-sm-4">
-    <div class="card">
-      <div class="card-body">
-        <img class="card-image-top" src="{{tool.image}}" class="card-img-top">
-        <h5 class="card-title">{{tool.name}}</h5>
-        <p class="card-text">{{tool.description}}</p>
-        <a class="card-text" (click)="getBrand(tool.brand)">{{tool.brand}}</a>
-        <p class="card-text">{{tool.amount}}</p>
-        <p class="card-text">{{tool.price | currency}}</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let tool of pagedItems">
+      <div class="card">
+        <div class="card-body">
+          <img
+          class="card-image-top"
+          src="./assets/{{ tool.image }}"
+          class="card-img-top"
+        />
+        <h5 class="card-title">{{ tool.name }}</h5>
+        <p class="card-text">{{ tool.description }}</p>
+        <a class="card-text" >{{ tool.brand.name }}</a>
+        <p class="card-text">{{ tool.amount }}</p>
+        <p class="card-text">{{ tool.price | currency }}</p>
+        </div>
       </div>
     </div>
   </div>
+  <nav aria-label="Pagination">
+    <ul class="pagination">
+      <li class="page-item" [class.disabled]="currentPage === 1">
+        <a class="page-link" (click)="previousPage()" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+        </a>
+      </li>
+      <li class="page-item" [class.active]="currentPage === page" *ngFor="let page of totalPages">
+        <a class="page-link" (click)="setPage(page)" href="#">{{ page }}</a>
+      </li>
+      <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+        <a class="page-link" (click)="nextPage()" href="#" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
-
-
-
 

@@ -5,12 +5,17 @@ import { LoginComponent } from './login/login.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { ModifyToolsComponent } from './modify-tools/modify-tools.component';
 import { CreateUserComponent } from './create-user/create-user.component';
+import { UserComponent } from './user/user.component';
+import { FormCreateToolComponent } from './form-create-tool/form-create-tool.component';
 
 const routes: Routes = [{ path: '', component: ListToolComponent },
 { path:'login',component:LoginComponent},
+{ path:'list-user',component:UserComponent},
 { path:'users',component:ListUserComponent},
 { path:'tools',component:ModifyToolsComponent},
-{ path:'create-user',component:CreateUserComponent}];
+{ path:'create-user',component:CreateUserComponent},
+{path:'form-create-tool',component:FormCreateToolComponent},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

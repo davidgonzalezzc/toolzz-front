@@ -1,29 +1,14 @@
-.logo{
-  padding: 10px;
-  width: 30%;
-  height: auto;
+img{
+  width: 70%;
 }
 
-.logo img{
-  display:flex;
+button{
+  margin:10px;
+  padding: 15px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/**/
-.title p{
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin: 20px;
-  font-weight: bold;
-  color:black;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.form-search{
-  margin: 10px;
-}
-
-
-.menu-dropdown{
-  margin-top: 10px;
+input{
+  margin-top: 25px;
+  margin-left:50px;
 }

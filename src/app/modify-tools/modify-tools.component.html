@@ -1,5 +1,6 @@
-<h2 id="titulo">Herramientas</h2>
-<button class="btn btn-warning">Nuevo</button>
+<div class="container">
+  <h2 class="title text-primary text-opacity-50">Herramientas</h2>
+<button routerLink="/form-create-tool" class="btn btn-primary">Nuevo</button>
 
 <table class="table table-light">
   <thead>
@@ -13,13 +14,31 @@
     </tr>
   </thead>
   <tbody class="table-group-divider">
-    <tr *ngFor="let tool of tools">
+    <tr *ngFor="let tool of pagedItems">
       <td>{{tool.id}}</td>
       <td>{{tool.name}}</td>
       <td>{{tool.price |currency}}</td>
       <td>{{tool.amount}}</td>
       <td>{{tool.city}}</td>
-      <td><button class="btn bnt-warning">Modificar</button><button class="btn btn-danger">Eliminar</button></td>
+      <td><button class="btn bnt-warning">Modificar</button><button class="btn btn-primary" (click)="onDelete(tool)">Eliminar</button></td>
     </tr>
   </tbody>
 </table>
+<nav aria-label="Pagination">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="previousPage()"  aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item" [class.active]="currentPage === page" *ngFor="let page of totalPages">
+      <a class="page-link" (click)="setPage(page)" >{{ page }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+      <a class="page-link" (click)="nextPage()"  aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>

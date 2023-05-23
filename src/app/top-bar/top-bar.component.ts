@@ -2,6 +2,7 @@ import { ListToolsService } from './../list-tools.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbDropdownConfig, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginService } from '../login.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-top-bar',
@@ -9,12 +10,22 @@ import { LoginService } from '../login.service';
   styleUrls: ['./top-bar.component.css']
 })
 export class TopBarComponent implements OnInit {
-userLoggedIn = false;
+
+
+  userLoggedIn = false;
+
+  searchForm = new FormGroup({
+    search: new FormControl('')
+  });
 
   constructor(private loginService: LoginService,
     private listToolsService:ListToolsService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit():void{
+
   }
 
 

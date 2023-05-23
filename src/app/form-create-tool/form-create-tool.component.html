@@ -1,0 +1,113 @@
+<div class="container">
+  <br>
+  <h2 class="title">Crear Herramienta</h2>
+  <br />
+  <br />
+  <form [formGroup]="tool" (ngSubmit)="onSubmit()">
+    <div class="container">
+      <div class="row">
+        <label class="form-label col-2" for="amount">Cantidad: </label>
+        <input
+          class="form-control col-6"
+          id="amount"
+          type="text"
+          formControlName="amount"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="row">
+        <label class="form-label col-2" for="brand">Marca: </label>
+        <input
+          class="form-control col-3"
+          id="brand"
+          type="text"
+          formControlName="brand"
+        />
+        <label class="form-label col-2" for="brand_id">Id Marca: </label>
+        <input
+          class="form-control col-auto"
+          id="brand_id"
+          type="text"
+          formControlName="brand_id"
+        />
+      </div>
+    </div>
+
+    <br />
+    <div class="container">
+      <div class="row">
+        <label class="form-label col-2" for="description">Descripcion: </label>
+        <input
+          class="form-control col-2"
+          id="description"
+          type="text"
+          formControlName="description"
+        />
+      </div>
+    </div>
+    <br />
+    <div class="container">
+      <div class="row">
+        <label class="form-label col-2" for="image">URL imagen: </label>
+        <input
+          class="form-control col-2"
+          id="image"
+          type="text"
+          formControlName="image"
+        />
+      </div>
+    </div>
+
+    <br />
+    <div class="container">
+      <div class="row">
+        <label class="form-label col-2" for="name">Nombre </label>
+        <input
+          class="form-control col-2"
+          id="name"
+          type="text"
+          formControlName="name"
+        />
+      </div>
+    </div>
+
+    <br />
+    <div class="container">
+      <div class="row">
+        <label class="form-label col-2" for="price">Precio: </label>
+        <input
+          class="form-control col-2"
+          id="price"
+          type="text"
+          formControlName="price"
+        />
+      </div>
+    </div>
+    <br>
+    <div class="container">
+      <div class="row">
+        <label class="form-label col-2" for="city">Ciudad</label>
+        <input
+          class="form-control col-2"
+          id="city"
+          type="text"
+          formControlName="city"
+        />
+
+        <label class="form-label col-2" for="city_id">Id Ciudad: </label>
+        <input
+          class="form-control col-2"
+          id="city_id"
+          type="text"
+          formControlName="city_id"
+        />
+      </div>
+    </div>
+    <br>
+    <p>Complete the form to enable button.</p>
+    <button class="btn btn-dark " type="submit">Registrar herramienta</button>
+    <!-- [disabled]="tool.valid" -->
+  </form>
+</div>

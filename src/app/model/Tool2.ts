@@ -1,8 +1,7 @@
 import { Brand } from "./Brand";
 import { City } from "./City";
 
-export interface Tool {
-  id:number;
+export interface Tool2 {
   name: string;        // Nombre de la herramienta
   description: string; // Descripción de la herramienta
   brand: Brand;       // Marca de la herramienta

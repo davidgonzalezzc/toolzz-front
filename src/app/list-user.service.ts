@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './model/User';
-import { Observable } from 'rxjs';
+import { Observable, catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,10 @@ export class ListUserService {
   getUsers():Observable<User[]>{
     return this.HttpClient.get<User[]>(this.url);
   }
+
+  postUser(user:any): Observable<User>{
+    return this.HttpClient.post<any>(this.url,user);
+  };
 
 
 }

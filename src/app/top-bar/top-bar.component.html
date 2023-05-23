@@ -1,30 +1,56 @@
-<div class="container">
+<div class="container-fluid bg-dark">
   <div class="row">
-    <div class ="brand col col-2 ">
-      <img routerLink="/" class ="logo" src="/assets/logo.png">
+    <!-- Logo -->
+    <div class="col-2">
+      <img routerLink="/" src="/assets/javerianalogo.png" />
     </div>
-    <div class ="name col col-3 title">
-      <p >Ferreteria El Tornillo Loco</p>
+
+    <div class="col-1"></div>
+
+    <!--Boton Usuarios-->
+    <div class="col-1">
+      <button type="button" class="btn btn-dark" routerLink="/list-user">
+        <span>Users</span>
+      </button>
     </div>
-    <div class = "col col-5 form-search">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="¿Qué quieres buscar hoy?" aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-warning" type="button" id="button-addon2">Buscar</button>
-      </div>
+    <!--Boton Herramientas-->
+    <div class="col-1">
+      <button type="button" class="btn btn-dark" routerLink="/tools">
+        <span>Tools</span>
+      </button>
     </div>
-    <div class="col col-1">
-      <div ngbDropdown class="menu-dropdown">
-        <button type="button" class="btn btn-warning" id="dropdownBasic1" ngbDropdownToggle>
-          Menú
-        </button>
-        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-          <a ngbDropdownItem routerLink="/login" role="button" *ngIf="!userLoggedIn">Iniciar Sesión</a>
-          <a ngbDropdownItem *ngIf="!userLoggedIn">Registrarse</a>
-          <a ngbDropdownItem *ngIf="userLoggedIn">Gestionar Herramientas</a>
-          <a ngbDropdownItem *ngIf="userLoggedIn">Gestionar Usuarios</a>
-          <a ngbDropdownItem routerLink="/login" *ngIf="userLoggedIn">Cerrar Sesión</a>
-        </div>
-      </div>
+
+    <div class="col-1"></div>
+
+    <!--Input buscar-->
+    <div class="col-2">
+      <input
+        class="align-middle"
+        type="text"
+        class="search"
+        id="search"
+        placeholder="Search"
+      />
+    </div>
+
+    <div class="col-2">
+      <button type="submit" class="btn btn-dark">Search</button>
+    </div>
+
+    <div *ngIf="!userLoggedIn" class="boton-elemento col-1">
+      <button type="button" class="btn btn-outline-light" routerLink="/login">
+        <span>Log In</span>
+      </button>
+    </div>
+
+    <div *ngIf="userLoggedIn" class="boton-elemento col-2">
+      <button
+        type="button"
+        class="btn btn-outline-light"
+        routerLink="/user-profile"
+      >
+        <span>Mi perfil</span>
+      </button>
     </div>
   </div>
 </div>

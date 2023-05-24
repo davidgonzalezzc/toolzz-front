@@ -13,7 +13,6 @@ import { ListUserComponent } from './list-user/list-user.component';
 import { LoginComponent } from './login/login.component';
 import { ModifyToolsComponent } from './modify-tools/modify-tools.component';
 import { CreateUserComponent } from './create-user/create-user.component';
-import { UserComponent } from './user/user.component';
 import { FormCreateToolComponent } from './form-create-tool/form-create-tool.component';
 
 @NgModule({
@@ -25,7 +24,6 @@ import { FormCreateToolComponent } from './form-create-tool/form-create-tool.com
     LoginComponent,
     ModifyToolsComponent,
     CreateUserComponent,
-    UserComponent,
     FormCreateToolComponent
   ],
   imports: [

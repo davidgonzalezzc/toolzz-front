@@ -1,27 +1,49 @@
-<h2 id="titulo">Usuarios</h2>
-<button class="btn btn-warning">Nuevo</button>
+<div class="container">
+  <h2 id="titulo">Usuarios</h2>
+  <button routerLink="/create-user" class="btn btn-dark">Nuevo</button>
 
-<table class="table table-light">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">E-mail</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Cumpleaños</th>
-      <th scope="col">Ciudad</th>
-      <th scope="col">Opciones</th>
-    </tr>
-  </thead>
-  <tbody class="table-group-divider">
-    <tr *ngFor="let user of users">
-      <td>{{user.id}}</td>
-      <td>{{user.email}}</td>
-      <td>{{user.name}}</td>
-      <td>{{user.last}}</td>
-      <td>{{user.birthday}}</td>
-      <td>{{user.role}}</td>
-      <td><button class="btn btn-danger">Inactivar</button><button class="btn btn-success">Editar</button></td>
-    </tr>
-  </tbody>
-</table>
+  <table class="table table-light">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Cumpleaños</th>
+        <th scope="col">Ciudad</th>
+        <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody class="table-group-divider">
+      <tr *ngFor="let user of pagedItems">
+        <td>{{ user.id }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.last }}</td>
+        <td>{{ user.birthday }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <button class="btn btn-danger">Inactivar</button
+          ><button class="btn btn-success">Editar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <nav aria-label="Pagination">
+  <ul class="pagination">
+    <li class="page-item" [class.disabled]="currentPage === 1">
+      <a class="page-link" (click)="previousPage()"  aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li class="page-item" [class.active]="currentPage === page" *ngFor="let page of totalPages">
+      <a class="page-link" (click)="setPage(page)" >{{ page }}</a>
+    </li>
+    <li class="page-item" [class.disabled]="currentPage === totalPages.length">
+      <a class="page-link" (click)="nextPage()"  aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>

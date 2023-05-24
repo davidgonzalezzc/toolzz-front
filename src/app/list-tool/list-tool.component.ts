@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { DataService } from './../data.service';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ListToolsService } from '../list-tools.service';
 import { Tool } from '../model/Tool';
 import { Observable } from 'rxjs';
@@ -7,13 +8,12 @@ import { Observable } from 'rxjs';
   templateUrl: './list-tool.component.html',
   styleUrls: ['./list-tool.component.css']
 })
-export class ListToolComponent implements OnInit {
-
+export class ListToolComponent implements OnInit,OnChanges {
 
   pagedItems: Tool[] = [];
   pageSize = 6;
-  currentPage = 1;
-
+  currentPage = 0;
+  selectedName: string='';
 
   selectedBrand: string = '';
   tools: Tool[] = [];
@@ -21,14 +21,21 @@ export class ListToolComponent implements OnInit {
 
 
   constructor(
-    private toolService:ListToolsService
+    private toolService:ListToolsService,
+    private dataService:DataService
   ) { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log(changes);
+  }
 
 
 
   ngOnInit(): void {
     this.getTools();
-    //this.listPaginated(this.currentPage,this.pageSize);
+    this.setPage(this.currentPage);
+    this.toolService.getPaginatedTools(this.currentPage,this.pageSize).subscribe(data=> this.pagedItems = data.content);
+    this.toolService.searchToolByName(this.dataService.data).subscribe(data=>{this.pagedItems=data; console.log(data);});
   }
 
 
@@ -43,27 +50,8 @@ export class ListToolComponent implements OnInit {
       }
     );
   }
-  list(index:number):void {
-    this.toolService.getTools().subscribe(
-      data => {
-        console.log(data);
-      },
-      error =>{
-        console.error('Error');
-      }
-    );
-  }
-  listPaginated(page:number,size:number):void{
-    this.toolService.getToolsPaginated(page,size).subscribe(
-      data=> {
-        this.pagedItems = data.content;
-        console.log(data);
-      },
-      error =>{
-        console.error('Error');
-      }
-    )
-  }
+
+
 
 
   setPage(page: number): void {
@@ -89,6 +77,7 @@ export class ListToolComponent implements OnInit {
   nextPage(): void {
     this.setPage(this.currentPage + 1);
   }
+
 
 
 }

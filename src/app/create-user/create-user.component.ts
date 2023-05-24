@@ -1,8 +1,7 @@
 import { ListUserService } from './../list-user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, NgForm } from '@angular/forms';
-import { CreateUserService } from '../create-user.service';
-import { User } from '../model/User';
+import { User2 } from '../model/User2';
 
 @Component({
   selector: 'app-create-user',
@@ -12,6 +11,7 @@ import { User } from '../model/User';
 export class CreateUserComponent implements OnInit {
 
   user = new FormGroup({
+    id: new FormControl(''),
     name: new FormControl(''),
     last: new FormControl(''),
     email: new FormControl(''),
@@ -20,6 +20,14 @@ export class CreateUserComponent implements OnInit {
     role: new FormControl('')
   });
 
+  userObject: User2 ={
+    name: '',
+    last:'',
+    email:'',
+    password:'',
+    birthday:'',
+    role:''
+  }
 
 
   constructor(private fb: FormBuilder,private userService:ListUserService) {
@@ -31,10 +39,15 @@ export class CreateUserComponent implements OnInit {
 
   }
 
-  onSubmit() {
-    console.log("COMPONENT",this.user.value);
-    this.userService.postUser(this.user.value);
-
+  onSubmit():void{
+    this.userObject.name = String(this.user.value.name);
+    this.userObject.last = String(this.user.value.last);
+    this.userObject.email = String(this.user.value.email);
+    this.userObject.password = String(this.user.value.password);
+    this.userObject.birthday = String(this.user.value.birthday);
+    this.userObject.role = String(this.user.value.role);
+    this.userService.postUser(this.userObject).subscribe();
+    alert("Creado");
   }
 
 }

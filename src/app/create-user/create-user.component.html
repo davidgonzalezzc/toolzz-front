@@ -1,38 +1,94 @@
-<div class="container ">
+<div class="container">
+  <br>
   <h2 class="title">Crear Usuario</h2>
+  <br />
+  <br />
   <form [formGroup]="user" (ngSubmit)="onSubmit()">
     <div class="container">
-    <label for="name">First Name: </label>
-    <input id="name" type="text" formControlName="name">
+      <div class="row">
+        <label class="form-label col-2" for="email">Email: </label>
+        <input
+          class="form-control col-6"
+          id="email"
+          type="text"
+          formControlName="email"
+        />
+      </div>
     </div>
-    <br>
+    <br />
     <div class="container">
-    <label for="last">Last Name: </label>
-    <input id="last" type="text" formControlName="last">
+      <div class="row">
+        <label class="form-label col-2" for="password">Password: </label>
+        <input
+          class="form-control col-3"
+          id="password"
+          type="text"
+          formControlName="password"
+        />
+        <label class="form-label col-2" for="role">Rol: </label>
+        <input
+          class="form-control col-auto"
+          id="role"
+          type="text"
+          formControlName="role"
+        />
+      </div>
     </div>
-    <br>
+
+    <br />
     <div class="container">
-    <label for="email">Email: </label>
-    <input id="email" type="text" formControlName="email">
+      <div class="row">
+        <label class="form-label col-2" for="name">Name: </label>
+        <input
+          class="form-control col-2"
+          id="name"
+          type="text"
+          formControlName="name"
+        />
+      </div>
     </div>
-    <br>
+    <br />
     <div class="container">
-    <label for="password">Password: </label>
-    <input id="password" type="text" formControlName="password">
+      <div class="row">
+        <label class="form-label col-2" for="last">Last: </label>
+        <input
+          class="form-control col-2"
+          id="last"
+          type="text"
+          formControlName="last"
+        />
+      </div>
     </div>
-    <br>
+
+    <br />
     <div class="container">
-    <label for="birthday">Birthday </label>
-    <input id="birthday" type="text" formControlName="birthday">
+      <div class="row">
+        <label class="form-label col-2" for="birthday">Birthday </label>
+        <input
+          class="form-control col-2"
+          id="birthday"
+          type="text"
+          formControlName="birthday"
+        />
+      </div>
     </div>
-    <br>
+
+    <br />
     <div class="container">
-    <label for="role">Role: </label>
-    <input id="role" type="text" formControlName="role">
+      <div class="row">
+        <label class="form-label col-2" for="id">Id: </label>
+        <input
+          class="form-control col-2"
+          id="id"
+          type="text"
+          formControlName="id"
+        />
+      </div>
+    </div>
+
     <br>
-    <div class="container"></div>
     <p>Complete the form to enable button.</p>
-    <button type="submit" [disabled]="!user.valid">Submit</button>
-    </div>
+    <button class="btn btn-dark " type="submit">Registrar usuario</button>
+    <!-- [disabled]="tool.valid" -->
   </form>
 </div>

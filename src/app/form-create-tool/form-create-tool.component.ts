@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { ListToolsService } from '../list-tools.service';
 import { Tool } from '../model/Tool';
-import { BrandService } from '../brand.service';
 import { Tool2 } from '../model/Tool2';
 
 @Component({
@@ -35,7 +34,7 @@ export class FormCreateToolComponent implements OnInit {
   }
 
 
-  constructor(private toolService:ListToolsService, private brandService:BrandService) { }
+  constructor(private toolService:ListToolsService) { }
 
   ngOnInit(): void {
   }

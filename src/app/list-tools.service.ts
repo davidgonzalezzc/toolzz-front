@@ -33,6 +33,19 @@ export class ListToolsService {
     return this.httpClient.delete<Tool>(url);
   }
 
+  searchToolByName(name: String):Observable<Tool[]>{
+    const url = `http://localhost:8090/api/listByName/${name}`;
+    if (name != null)
+    return this.httpClient.get<Tool[]>(url);
+    return this.httpClient.get<Tool[]>("http://localhost:8090/api/list");
+  }
+
+  getPaginatedTools(page:number,size:number):Observable<any>{
+    const url = `http://localhost:8090/api/searchPaginated?page=${page}&size=${size}&order=id&asc=true`;
+    return this.httpClient.get<any>(url);
+  }
+
+
 
 
 }

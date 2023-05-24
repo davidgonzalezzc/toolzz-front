@@ -9,7 +9,7 @@
 
     <!--Boton Usuarios-->
     <div class="col-1">
-      <button type="button" class="btn btn-dark" routerLink="/list-user">
+      <button type="button" class="btn btn-dark" routerLink="/users">
         <span>Users</span>
       </button>
     </div>
@@ -22,19 +22,20 @@
 
     <div class="col-1"></div>
 
-    <!--Input buscar-->
-    <div class="col-2">
+
+
+    <div class="col-4">
+      <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
       <input
         class="align-middle"
         type="text"
         class="search"
         id="search"
         placeholder="Search"
+        formControlName="search"
       />
-    </div>
-
-    <div class="col-2">
-      <button type="submit" class="btn btn-dark">Search</button>
+      <button type="submit" class="btn btn-dark" >Search</button>
+      </form>
     </div>
 
     <div *ngIf="!userLoggedIn" class="boton-elemento col-1">

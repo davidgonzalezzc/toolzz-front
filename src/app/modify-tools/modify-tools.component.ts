@@ -12,13 +12,15 @@ export class ModifyToolsComponent implements OnInit {
   tools: Tool[] = [];
   pagedItems: Tool[] = [];
   pageSize = 6;
-  currentPage = 1;
+  currentPage = 0;
 
   constructor(private toolService:ListToolsService) { }
 
   ngOnInit(): void {
     this.getTools();
     this.setPage(this.currentPage);
+        this.toolService.getPaginatedTools(this.currentPage,this.pageSize).subscribe(data=> this.pagedItems = data.content);
+
   }
   getTools(): void {
     this.toolService.getTools().subscribe(
